@@ -1,0 +1,279 @@
+*{
+    padding: 0;
+    margin:0;
+    font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+    box-sizing: border-box;
+}
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html{
+    height:100%; 
+    max-width:100%;
+    font-size: 14px;
+    margin: auto;
+    background: linear-gradient(180deg, #000000 6%, #02426f 30%, #00bcbc 75%, #59e6e6 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+body {
+    overflow:auto;
+}
+header{
+    width: 100%;
+    text-align: center;
+    overflow: auto;
+    background-color: #000000;
+}
+#logo{
+    min-width: 70px;
+    max-width: 300px;
+    text-align: center;
+}
+.full {
+    color: #000000;
+    overflow: auto;
+}
+main {
+    background-color: #ffffff;
+
+}
+ul li {
+    list-style: none;
+}
+footer {
+    background-color: #000000;
+    color: #59e6e6;
+    text-align: center;
+    border-top: 1px #ffffff solid;
+    padding: 5px;
+}
+a{
+    color: #59e6e6;
+    text-decoration: none;
+}
+a:hover{
+    font-style: italic;
+}
+
+h1 {
+    color: #04BCBC;
+    font-size: 42px;
+    text-align: center;
+    padding: 25px 0 15px 0;
+}
+h2 {
+    text-align: left;
+    font-size: 36px;
+    padding: 15px;
+    color: #FF9F41;
+}
+h3{
+    text-align: left;
+    font-size: 24px;
+    padding: 15px;
+    color: #04BCBC;
+}
+p{
+    text-align: left;
+    padding: 5px 5px 10px 5px;
+}
+b{ 
+    color: #59E6E6;
+}
+i{
+    color: #04BCBC;
+}
+u{
+    color: #FF9F41;
+}
+#up{
+    display:block;
+    font-size: 30px;
+    padding: 5px;
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+    opacity: .52;
+}
+#up a{
+    color:#000;
+    font-style:normal;
+}
+
+/* --- állandó menü --- */
+.nav {
+    background-color: #59e6e6;
+    text-align: center;
+    padding: 10px;
+    color: #000000;
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+}
+.nav a {
+    color: #000000;
+    padding: 5px 15px;
+}
+.nav a:hover,  #nav-active {
+    color: #ffffff;
+    text-decoration: none;
+    border-top: 1px #ffffff solid;
+    border-bottom:  1px #ffffff solid;
+    font-style: normal;
+}
+/* --- állandó menü vége --- */
+
+/* --- aktuális menü --- */ 
+.menu {
+    background: #000;
+    min-height: 48px;
+    height: 100%;
+}
+.main-menu {
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    background-color: #000;
+    z-index: 1;
+}
+.main-menu ul {
+    display: none;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    min-width: 200px;
+}
+.main-menu li {
+    display: inline-block;
+    position: relative;
+}
+.main-menu a {
+    width: 100%;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 12px;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.main-menu a:hover{
+    color: #ffffff;
+    font-style: normal;
+}
+.sub-menu { 
+    background: transparent;
+    position: absolute;
+    left: 0;
+}
+.sub-menu a {
+    color: #ffffff;
+}
+.sub-menu a:hover, #menu-active{
+    border-left: 5px #ffffff solid;
+    color: #000000;
+}
+/* lefele mutató nyíl*/
+.main-menu li > a:after, .main-menu .sub-menu li > a:after  {
+    content: " \25BC";
+    font-size: 12px;
+}
+/* ahol nincs további menü, ott ne legyen nyíl */
+.main-menu li > a:only-child:after,
+.main-menu .sub-menu li > a:only-child:after {
+    content: "";
+}
+/* almenü megjelenjen*/
+.main-menu li:hover > .sub-menu {
+    display: block;
+}
+.menu .main-menu, .menu > input {
+display: none;
+}
+/* telefon nézet (három csík)*/
+.menu > label {
+    display: block;
+    font-size: 36px;
+    color: #ffffff;
+    position: absolute;
+    right: 20px;
+    width: 36px;
+    padding: 0;
+    cursor: pointer;
+}
+/* telefon nézetben mikor lenyílik */
+.menu > input:checked + .main-menu {
+    display: block;
+    clear: both;
+    top: 45px;
+    position: relative;
+    background: linear-gradient(180deg, #000000 6%, #02426f 30%, #00bcbc 75%, #59e6e6 100%);
+    color: #fff;
+}
+/*egymás alatt jelenenek meg a menük */
+.menu ul li {
+    display: block;
+    padding: 12px 10px;
+}
+/* lenyíló menü hatására az alatta lévő dolgok lejjebb csúsznak*/
+.menu ul ul li:hover > ul, .menu ul li:hover > ul {
+    display: none;
+    position: relative;
+}
+/* --- aktuális menü vége --- */ 
+
+@media only screen and (min-device-width: 768px) {
+    html{
+        max-width:80%;
+    }
+    body{
+        height: 100%;
+    }
+    #logo{
+        width: auto;
+    }
+    #up{
+        display:none;
+    }
+    .main-menu a {
+        color: #59E6E6;
+    }
+    .menu .main-menu {
+        display: block;
+        width: 100%;
+    }
+    .menu > label {
+        display: none
+    }
+    .menu ul li {
+        display: inline-block;
+    }
+    .sub-menu, .sub-menu a { 
+        background: #000;
+        color: #59E6E6;
+    }
+    .sub-menu a:hover, #menu-active{
+        color: #ffffff;
+    }
+    /* almenü jobbra jelenjen meg*/
+    .main-menu ul ul {
+        top: 0;
+        left: 100%;
+    }
+    /* menüpontok egymás alatt jelenjenek meg*/
+    .main-menu ul li, .main-menu ul a {
+        display: block;
+        position: relative;
+        padding: 5px;
+    }
+    /* oldalra mutató nyít*/
+    .main-menu .sub-menu li > a:after {
+        content: " \25B6";
+        font-size: 12px;
+    }
+    .menu ul ul li:hover > ul, .menu ul li:hover > ul {
+        display: none;
+        position: absolute;
+    }
+}
