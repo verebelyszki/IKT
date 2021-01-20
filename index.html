@@ -1,1 +1,148 @@
 
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" />
+        <title>13ESZ</title>
+        <style>
+            @media screen and (min-width: 600px) {
+                main div p{
+                    text-align: justify;
+                }
+                .box-one h2{
+                    text-align: right;
+                    padding-top: 25px;
+                }
+                .box-two h2{
+                    text-align: left;
+                    padding-top: 25px 
+                }
+                .box-one img {
+                    float: right;
+                    text-align: right;
+                    display: block;
+                }
+                .box-two img {
+                    float: left;
+                    text-align: left;
+                    display: block;
+                }
+                .box-one h2 a{
+                    text-align: left;
+                }
+                .box-two h2{
+                    text-align: right;
+                }
+            }
+            .box-one, .box-two{
+                text-align: left;
+                padding: 5px;
+                margin: 5px;
+                margin-bottom: 0;
+            }
+            .box-one{
+                background-color: #505050;
+                text-align: left;
+                color: #ffffff;
+            }
+            .box-two{
+                background-color: #ffffff;
+                text-align: right;
+                color:black
+            }
+            .box-one img, .box-two img {
+                float: none;
+                text-align: center;
+                padding: 5px 10px 5px 5px;
+                min-height: 15px;
+                width: 100%;
+                max-width: 200px;
+                border-radius: 25%;
+            }
+            .box-one h2, .box-two h2  {
+                text-align: center;
+                font-style: none;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+            .box-one h2 a, .box-two h2 a{
+                color: #FF9F41;
+            }
+            .box-two h2 a:hover{
+                border-right: 2px #505050 solid;
+                padding-right: 5px;
+                font-style:normal;
+            }
+            .box-one h2 a:hover{
+                border-left: 2px #ffffff solid;
+                padding-left: 5px;
+                font-style:normal;
+            }
+        </style>
+    </head>
+    <body id="top">
+        <div class="full">
+            <header>
+                    <img  id="logo" src="logo.peter.png" alt="13ESZ Verebély">
+            </header>
+            <nav>
+                <div class="nav">
+                    <!---  id="nav-active" aktuális menühöz --->
+                    <a href="index.html" id="nav-active">Kezdőlap</a>
+                    <a href="#">Programozás</a>
+                    <a href="#">Web</a>
+                    <a href="#">Hálózat</a>
+                    <a href="#">Hardver</a>
+                    <a href="#">Info töri</a>
+                </div>
+                <div class="menu"  aria-label="Menu">
+
+                </div>
+            </nav>
+            <main>
+                <div>
+                        <h1>Üdv</h1>
+                        <p>
+                            Szöveg
+                        </p>
+                    <div class="box-one">
+                        <img src="mp-img02.jpg">
+                        <h2><a href="#">Programozás</a></h2>
+                        <p>
+                            Szöveg
+                        </p>
+                    </div>
+                    <div class="box-two">
+                        <img src="mp-img01.jpg">
+                        <h2><a>Web</a></h2>
+                        <p>
+                            Szöveg
+                        </p>
+                    </div>
+                    <div class="box-one">
+                        <img src="mp-img02.jpg">
+                        <h2><a href="#">Hálózat</a></h2>
+                        <p>
+                            Szöveg
+                        </p>
+                    </div>
+                    <div class="box-two">
+                        <img src="mp-img01.jpg"> 
+                        <h2><a>Hardver</a></h2>
+                        <p>
+                            Szöveg
+                        </p>
+                    </div>
+                </div>
+                <div id="up">
+                    <a href="#top" class="">&#8679;</a>
+                </div>
+            </main>            
+            <footer>
+                &#169; 13ESZ, 2020
+            </footer>
+        </div>
+</body>
+</html>
